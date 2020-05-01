@@ -4,6 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import './App.css';
 import Register from './components/Register';
 import VerifyUser from './components/VerifyUser';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <Switch>
         <Route path="/register" component={Register} />
         <Route path="/verify" component={VerifyUser} /> 
+        <Route path="/not-found" component={NotFound} />
         <Redirect from="/" exact to="/register" />
+        <Redirect to='/not-found' />
       </Switch>
     </div>
     </React.Fragment>
