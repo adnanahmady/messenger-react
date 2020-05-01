@@ -1,9 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import './App.css';
 
 function App() {
   return (
+    <React.Fragment>
+      <ToastContainer position={toast.POSITION.BOTTOM_RIGHT}/>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,6 +23,7 @@ function App() {
         </a>
       </header>
     </div>
+    </React.Fragment>
   );
 }
 
