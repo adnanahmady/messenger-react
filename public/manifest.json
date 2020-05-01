@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Messanger",
+  "name": "Anonymouse Messanger",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +18,13 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "index.html",
+  "scope": ".",
+  "dir": "rtl",
+  "lang": "fa",
+  "orientation": "portrait-primary",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#00aaff",
+  "background_color": "#ffffff",
+  "description": "Message Anonymously with your freinds"
 }
