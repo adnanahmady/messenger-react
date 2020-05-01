@@ -1,0 +1,20 @@
+{
+    "welcome to chat": "به چت خوش آمدید",
+    "name": "نام",
+    "required": "الزامی",
+    "verify": "اعتبارسنجی",
+    "and": "و",
+    "verification form": "فرم اعتبارسنجی",
+    "verification code": "کد تعیین هویت",
+    "your verification code": "کد تعیین هویت شما",
+    "register": "ثبت نام",
+    "phone": "تلفن",
+    "phone number": "شماره تلفن",
+    "login": "ورود",
+    "email": "پست الکترونیکی",
+    "processing": "درحال پردازش",
+    "registeration form": "فرم ثبت نام",
+    "Not Found": "پیدا نشد",
+    "Requested page does not exist": "صفحه درخواست شده موجود نیست",
+    "404": "۴۰۴"
+}
