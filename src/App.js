@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import './App.css';
 import Register from './components/Register';
+import VerifyUser from './components/VerifyUser';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route path="/register" component={Register} />
+        <Route path="/verify" component={VerifyUser} /> 
         <Redirect from="/" exact to="/register" />
       </Switch>
     </div>
