@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import t, { Trans } from "../utils/Translator";
-import api from "../services/api";
 import { toast } from "react-toastify";
+import { Redirect } from "react-router-dom";
+import t, { Trans } from "../utils/Translator";
 import Form from "./partials/Form";
 import Input from "./partials/Input";
 import Button from "./partials/Button";
+import auth, { register, getCurrentUser } from '../services/auth';
 
 class Register extends Component {
   state = {
@@ -16,9 +17,8 @@ class Register extends Component {
     toast.info(t("processing") + "...");
 
     try {
-      const { data } = await api.post("/register", email);
-      toast.dismiss();
-      toast.success(data.meta.message);
+      register(email);
+
       return this.props.history.push("/verify");
     } catch (ex) {
       toast.dismiss();
@@ -39,6 +39,9 @@ class Register extends Component {
   };
 
   render() {
+    if (getCurrentUser()) {
+        return (<Redirect to="/chat" />);
+    }
     const { email } = this.state;
 
     return (

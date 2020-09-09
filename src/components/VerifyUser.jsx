@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import { toast } from 'react-toastify';
 import t, { Trans } from "../utils/Translator";
 import Form from "./partials/Form";
 import Input from "./partials/Input";
 import Button from "./partials/Button";
-import { toast } from 'react-toastify';
-import api from '../services/api';
+import { verifyUser, getCurrentUser } from "../services/auth";
 
 class VerifyUser extends Component {
   state = {
@@ -16,9 +17,7 @@ class VerifyUser extends Component {
     toast.info(t("processing") + "...");
 
     try {
-      const { data } = await api.post("/verify/otp", otp);
-      toast.dismiss();
-      toast.success(data.meta.message);
+      await verifyUser(otp);
       window.location = window.location.origin+'/chat';
     } catch (ex) {
       toast.dismiss();
@@ -28,7 +27,6 @@ class VerifyUser extends Component {
       if (ex.response && ex.response.status === 404) {
         return toast.error(ex.response.data.data);
       }
-      console.log(ex);
       toast.error(t('there is a problem, please be patient and try later'));
     }
   };
@@ -42,6 +40,9 @@ class VerifyUser extends Component {
   };
 
   render() {
+    if (getCurrentUser()) {
+        return (<Redirect to="/chat" />);
+    }
     const { otp } = this.state;
 
     return (

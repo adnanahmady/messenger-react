@@ -47,8 +47,8 @@ export default class Navbar extends Component {
                 </Link>
               </div>
               <div className={this.state.styles.item}>
-                <Link className="nav-link text-light" to="#">
-                  Item #3
+                <Link className="nav-link text-light" to="/logout">
+                  Logout
                 </Link>
               </div>
             </div>
